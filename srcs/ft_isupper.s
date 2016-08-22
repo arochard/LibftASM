@@ -1,30 +1,27 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    ft_isalnum.s                                       :+:      :+:    :+:    #
+#    ft_isupper.s                                       :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: arochard <arochard@student.42.fr>          +#+  +:+       +#+         #
+#    By: arochard <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2015/02/11 18:06:00 by arochard          #+#    #+#              #
-#    Updated: 2015/02/11 18:06:01 by arochard         ###   ########.fr        #
+#    Created: 2016/08/22 16:44:34 by arochard          #+#    #+#              #
+#    Updated: 2016/08/22 16:44:48 by arochard         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+;int		ft_isupper(int c);
 
-;int	ft_isalnum(int c);
+section .text
+	global ft_isupper
 
-section	.text
-	global ft_isalnum
-	
-ft_isalnum:
-	mov 	rax, rdi
-	cmp		rdi, 126
-	ja		.not_alnum
-	cmp		rdi, 32
-	jb		.not_alnum
-	mov		rax, 1
+ft_isupper:
+	cmp rdi, 65
+	jb .noupper
+	cmp rdi,90
+	jg .noupper
+	mov rax,1
 	ret
-
-.not_alnum:
-	mov		rax, 0
+	.noupper:
+	mov rax,0
 	ret

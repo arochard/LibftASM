@@ -34,7 +34,7 @@ int 	ft_strcmp(const char *s1, const char *s2);
 
 int		ft_isupper(int c);
 int		ft_islower(int c);
-char	*ft_strjoin(char *dest, const char *src);
+// char	*ft_strjoin(char *dest, const char *src);
 char	*ft_strchr(const char *s, int c);
 
 int		main(const int ac, const char **av)
@@ -111,8 +111,8 @@ int		main(const int ac, const char **av)
 	while (i < 6)
 		dest[i++] = 'A';
 	dest[i] = '\0';
-	printf("\033[35mft_strjoin:\n\033[0m");
-	printf("ft_strjoin: %s\n", ft_strjoin("coucou", "salut"));
+	// printf("\033[35mft_strjoin:\n\033[0m");
+	// printf("ft_strjoin: %s\n", ft_strjoin("coucou", "salut"));
 
 	printf("\033[34mft_strcat:\n\033[0m");
 	printf("ft_strcat: %s\n", ft_strcat(dest, src));
